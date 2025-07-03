@@ -19,7 +19,7 @@ const razorpay = new Razorpay(
 )
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 
@@ -41,7 +41,7 @@ app.post('/pay', (req,res) => {
 )
 
 
-app.post('/verify', (req,res) => { 
+app.post('/verify', (req,res) => {
     const {
     razorpay_order_id,
     razorpay_payment_id,
